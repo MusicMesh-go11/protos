@@ -28,5 +28,5 @@ message Comment {
 }
 
 message CommentID {
-  string composition_id = 1;
+  string commentId = 1;
 }
