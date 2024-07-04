@@ -20,15 +20,10 @@ message CollaborationID{
 message Collaboration {
   string composition_id = 2;
   string user_id = 3;
-  CollaborationRole role = 4;
+  string role = 4;
   string joined_at = 5;
 }
 
-enum CollaborationRole {
-  OWNER = 0;
-  COLLABORATOR = 1;
-  VIEWER = 2;
-}
 
 message CompositionID {
   string compositionId = 1;
