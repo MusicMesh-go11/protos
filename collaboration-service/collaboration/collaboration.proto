@@ -7,33 +7,35 @@ option go_package = "generate/collaboration";
 service CollaborationService {
   rpc Create (Collaboration) returns (Void);
   rpc GetById(CollaborationID) returns (CollaborationRes);
-  rpc GetByCompositionId (CompositionID) returns (CollaborationRes);
+  rpc GetByCompositionId (CompositionID) returns (CollaborationResList);
   rpc Delete (CollaborationID) returns (Void);
 }
 
 message Void {}
 
 message CollaborationID{
-  string CollaborationID = 1;
+  string collaboration_id = 1;
 }
 
 message Collaboration {
+  string composition_id = 1;
+  string user_id = 2;
+  string role = 3;
+  string joined_at = 4;
+}
+
+message CompositionID {
+  string composition_id = 1;
+}
+
+message CollaborationRes {
+  string id = 1;
   string composition_id = 2;
   string user_id = 3;
   string role = 4;
   string joined_at = 5;
 }
 
-
-message CompositionID {
-  string compositionId = 1;
-}
-
-message CollaborationRes {
-  string id = 1;
-  string compositionId = 2;
-  string inviter_id = 3;
-  string invitee_id = 4;
-  string createdAt = 5;
-  string updatedAt = 6;
+message CollaborationResList {
+  repeated CollaborationRes collaborations = 1;
 }
