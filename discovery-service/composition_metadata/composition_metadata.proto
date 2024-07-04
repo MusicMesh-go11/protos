@@ -9,6 +9,8 @@ service CompositionMetadataService {
   rpc GetTrending (Void) returns (CompositionsRes);
   rpc GetRecommended (Void) returns (CompositionsRes);
   rpc GetByGenre (GenreRequest) returns (CompositionsRes);
+  rpc Like(Void) returns(Void);
+  rpc UnLike(Void) returns (Void);
   rpc Update(CompositionRes) returns (Void);
   rpc Delete(CompositionMetadataId) returns (Void);
 }
