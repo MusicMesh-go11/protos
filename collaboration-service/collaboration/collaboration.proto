@@ -8,6 +8,7 @@ service CollaborationService {
   rpc Create (Collaboration) returns (Void);
   rpc GetById(CollaborationID) returns (CollaborationRes);
   rpc GetByCompositionId (CompositionID) returns (CollaborationResList);
+  rpc Update (CollaborationRes) returns (Void);
   rpc Delete (CollaborationID) returns (Void);
 }
 
