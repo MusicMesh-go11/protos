@@ -32,6 +32,7 @@ message CompositionRes{
   string description = 4;
   string status = 5;
   string createAt = 6;
+  string updated_at = 7;
 }
 
 message CompositionId{

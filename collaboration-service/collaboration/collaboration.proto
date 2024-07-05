@@ -8,6 +8,7 @@ service CollaborationService {
   rpc Create (Collaboration) returns (Void);
   rpc GetById(CollaborationID) returns (CollaborationRes);
   rpc GetByCompositionId (CompositionID) returns (CollaborationResList);
+  rpc Update (CollaborationRes) returns (Void);
   rpc Delete (CollaborationID) returns (Void);
 }
 
@@ -20,14 +21,8 @@ message CollaborationID{
 message Collaboration {
   string composition_id = 1;
   string user_id = 2;
-  CollaborationRole role = 3;
+  string role = 3;
   string joined_at = 4;
-}
-
-enum CollaborationRole {
-  OWNER = 0;
-  COLLABORATOR = 1;
-  VIEWER = 2;
 }
 
 message CompositionID {
@@ -38,7 +33,7 @@ message CollaborationRes {
   string id = 1;
   string composition_id = 2;
   string user_id = 3;
-  CollaborationRole role = 4;
+  string role = 4;
   string joined_at = 5;
 }
 
