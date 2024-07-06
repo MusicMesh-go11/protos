@@ -20,6 +20,7 @@ message UserRes{
   string email = 3;
   string password = 4;
   string createdAt = 5;
+  string updated_at = 6;
 }
 
 message UsersRes {
